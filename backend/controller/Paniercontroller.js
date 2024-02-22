@@ -2,8 +2,8 @@ const Panier = require("../database/panierFunction");
 
 module.exports = {
   getAllcarts: async (req, res) => {
-    const {id} = req.params;
-    console.log({id})
+    const {id} = req.params
+
     try {
       const carts = await Panier.getallpanier(Number (id))
       res.status(200).json(carts)

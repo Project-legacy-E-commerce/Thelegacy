@@ -9,8 +9,6 @@ const { Panier,Product,ColorProduct,ImgProduct } = require("../database/sequalis
       where: { userIduser: id },
       include: [{ model: Product, include: [ColorProduct, ImgProduct] }],
     });
-      console.log('res',results);
-
     return results 
     }
     catch(err){
