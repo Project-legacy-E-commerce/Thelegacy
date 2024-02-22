@@ -4,9 +4,7 @@ const database = process.env.DATABASE;
 const username = process.env.USERNAME;
 const pwd = process.env.PWD;
 
-
 const sequelize = new Sequelize("teaa", "root", "Hammaboy10@",{
-
 
   host: "localhost",
   dialect: "mysql",
