@@ -78,7 +78,8 @@ module.exports={
     },
     GetallProductAvailable : async (req,res)=>{
         try{
-            const results = await prod.getAllProductAvailable()
+            const results = await prod
+              .getAllProductAvailable()
             res.status(200).json(results)
         }
         catch(err){

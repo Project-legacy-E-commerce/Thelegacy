@@ -1,5 +1,5 @@
 const { Op, where } = require('sequelize');
-const { Product, ImgProduct, ColorProduct, Reviewrate } = require('./sequalise');
+const { Product, ImgProduct, ColorProduct, Reviewrate, User } = require('./sequalise');
 
 // insert product
 const insertProduct = async (data) => {
@@ -43,11 +43,29 @@ const getAllProduct = () => {
 // get specific product by id
 const getProductById = async (id) => {
  try{
-  const data =  await Product.findAll({
+  const data = await Product.findAll({
     where: { idproduct: id },
-    include: [ImgProduct, ColorProduct],
-  })
-  return data
+    include: [
+      {
+        model: ImgProduct, // Assuming ImgProduct is the associated model for images
+        // Additional associations if needed
+      },
+      {
+        model: ColorProduct, // Assuming ColorProduct is the associated model for colors
+        // Additional associations if needed
+      },
+      {
+        model: Reviewrate, // Assuming ReviewRate is the associated model for reviews
+        include: [
+          {
+            model: User, // Assuming User is the associated model for users
+            attributes: ["iduser", "firstname", "lastname"], // Specify the attributes you want to include from the User model
+          },
+        ],
+      },
+    ],
+  });
+  return data;
  }
  catch(err){
   console.log('err',err);

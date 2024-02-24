@@ -178,27 +178,27 @@ const Wishlist = sequelize.define(
   },
   { freezeTableName: true, timestamps: false }
 );
-const Payment= sequelize.define(
-  "Payment",{
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-      allowNull: false,
-    },
-    userIduser : {
-      foreignKey : true,
-      allowNull : false,
-      type: DataTypes.INTEGER 
-    },
-    panierIdpanier : {
-      foreignKey : true,
-      allowNull : false,
-      type: DataTypes.INTEGER 
-    }
-  },
-  { freezeTableName: true, timestamps: false }
-)
+// const Payment= sequelize.define(
+//   "Payment",{
+//     id: {
+//       type: DataTypes.INTEGER,
+//       autoIncrement: true,
+//       primaryKey: true,
+//       allowNull: false,
+//     },
+//     userIduser : {
+//       foreignKey : true,
+//       allowNull : false,
+//       type: DataTypes.INTEGER 
+//     },
+//     panierIdpanier : {
+//       foreignKey : true,
+//       allowNull : false,
+//       type: DataTypes.INTEGER 
+//     }
+//   },
+//   { freezeTableName: true, timestamps: false }
+// )
 
 
 // Associations
@@ -231,7 +231,7 @@ module.exports = {
   ImgProduct :ImgProduct,
   ColorProduct :ColorProduct,
   User :User,
-  Payment:Payment
+  // Payment:Payment
 }
 
 
