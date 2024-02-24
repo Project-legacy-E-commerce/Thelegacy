@@ -3,12 +3,13 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import Inventory2Icon from "@mui/icons-material/Inventory2";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import ReviewsIcon from "@mui/icons-material/Reviews";
+import Products from "@/app/seller/Functions/FetchAllProducts";
 
 export default function Numbers() {
+  const products = Products();
   return (
     <MUI.Container>
       <MUI.Box
-        
         sx={{
           p: 0,
           display: "flex",
@@ -48,7 +49,7 @@ export default function Numbers() {
         >
           <Inventory2Icon sx={{ fontSize: "60px", color: "burlywood" }} />
           <MUI.Typography sx={{ fontSize: "25px", fontFamily: "fantasy" }}>
-            250
+            {products.length}
           </MUI.Typography>
           <MUI.Typography sx={{ fontSize: "25px", fontFamily: "monospace" }}>
             Products

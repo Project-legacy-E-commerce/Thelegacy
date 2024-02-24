@@ -5,7 +5,7 @@ module.exports={
         const obj = {
           name: req.body.name,
           category: req.body.category,
-          rate: req.body.rate,
+        //   rate: req.body.rate,
           status: req.body.status,
           initalprice: req.body.initalprice,
           currentprice: req.body.currentprice,

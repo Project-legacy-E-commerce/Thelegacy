@@ -1,10 +1,19 @@
 import * as React from "react"
-import Users from "@/app/seller/Interfaces/UserType"
+import Clients from "@/app/seller/Interfaces/UserType"
 
 export default function FetchAllUsers () {
-    const [users, setUsers] = React.useState<Users[]>([])
+    const [clients, setClients] = React.useState<Clients[]>([])
 
-    React.useEffect(()=>{
-        fetch("http://localhost:3000/")
-    },[])
+    React.useEffect(() => {
+        fetch(`http://localhost:3000/saler/getallprod/${1}`)
+          .then((result) => result.json())
+          .then((res) => {
+            setClients(res);
+          })
+          .catch((err) => {
+            console.error(err);
+          })
+      }, []);
+    
+      return clients;
 }

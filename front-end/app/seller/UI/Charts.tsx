@@ -1,16 +1,17 @@
 import * as MUI from "@mui/material";
 import { PieChart } from "@mui/x-charts/PieChart";
 import { BarChart, LineChart } from "@mui/x-charts";
+import Products from "@/app/seller/Functions/FetchAllProducts";
 
 const drawerWidth = 330;
 
-const data = [
-  { id: 0, value: 10, label: "Clients" },
-  { id: 1, value: 15, label: "Products" },
-  { id: 2, value: 20, label: "Sales" },
-];
-
 export default function Chart() {
+  const products = Products();
+  const data = [
+    { id: 0, value: 10, label: "Clients" },
+    { id: 1, value: products.length, label: "Products" },
+    { id: 2, value: 20, label: "Sales" },
+  ];
   return (
     <MUI.Container
       sx={{
@@ -67,16 +68,16 @@ export default function Chart() {
           />
         </MUI.Paper>
         <MUI.Paper elevation={8} sx={{ order: 0 }}>
-        <LineChart
-      xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
-      series={[
-        {
-          data: [2, 5.5, 2, 8.5, 1.5, 5],
-        },
-      ]}
-      width={400}
-      height={250}
-    />
+          <LineChart
+            xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
+            series={[
+              {
+                data: [2, 5.5, 2, 8.5, 1.5, 5],
+              },
+            ]}
+            width={400}
+            height={250}
+          />
         </MUI.Paper>
       </MUI.Box>
     </MUI.Container>

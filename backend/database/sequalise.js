@@ -209,6 +209,7 @@ Product.hasMany(ColorProduct)
 Panier.belongsTo(User, { foreignKey: 'userIduser' , onDelete: 'CASCADE' });
 Panier.belongsTo(Product, { foreignKey: 'productIdproduct', onDelete: 'CASCADE' });
 Product.hasMany(ReviewRate,{onDelete: 'CASCADE'})
+User.hasMany(Payment)
 // realtion between saler 
 
 Product.belongsTo(User, { foreignKey: 'userIduser' , onDelete: 'CASCADE' });
