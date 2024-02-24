@@ -100,9 +100,6 @@ export default function AllProducts() {
       maxWidth={false}
       sx={{ bgcolor: "#EEEFF8", height: 800, width: "100%" }}
     >
-      <NavBar />
-      <MUI.CssBaseline />
-      <SideBar />
       <MUI.Box sx={{ ml: `${drawerWidth}px`, width: "85%" }}>
         <DataGrid
           sx={{ fontSize: "15px", fontWeight: "24px" }}

@@ -44,10 +44,12 @@ export default function AddNewProduct() {
   const uploadImage = async (image: any) => {
     const formData = new FormData();
     formData.append("file", image);
-    formData.append("upload_preset", "iexr9rlx")
+    formData.append("upload_preset", "iexr9rlx");
     try {
       const response = await axios.post(
-        "https://api.cloudinary.com/v1_1/dixniotyg/upload",formData);
+        "https://api.cloudinary.com/v1_1/dixniotyg/upload",
+        formData
+      );
       return response.data.secure_url;
     } catch (error) {
       console.error("Error uploading image to Cloudinary:", error);
@@ -58,7 +60,7 @@ export default function AddNewProduct() {
     const selectedImages = Array.from(e.target.files);
     console.log(selectedImages);
     setPhoto(Array.from(e.target.files));
-    try{
+    try {
       const mainImageUrl = await uploadImage(photo[0]);
       setImageMain(mainImageUrl);
       const additionalImageUrls = await Promise.all(
@@ -66,8 +68,7 @@ export default function AddNewProduct() {
       );
       setImgUrl(additionalImageUrls);
       notifySuccess();
-    }
-    catch(err){
+    } catch (err) {
       console.log("Error in insert data from the frontend", err);
     }
   };
@@ -108,14 +109,11 @@ export default function AddNewProduct() {
         bgcolor: "#EEEFF8",
         height: 800,
         width: "100%",
-        display: "inline-flex",
-        justifyContent: "space-between",
+        display: "flex",
+        justifyContent: "space-around",
       }}
     >
-      <NavBar />
-      <MUI.CssBaseline />
-      <SideBar />
-      <MUI.Box sx={{ mt: "100px", width: "40%" }}>
+      <MUI.Box sx={{ ml: `${drawerWidth}px`, width: "40%" }}>
         <Card
           variant="outlined"
           sx={{
@@ -155,7 +153,7 @@ export default function AddNewProduct() {
                   },
                 },
               }}
-              onChange={()=>setCategory("electronic")}
+              onChange={() => setCategory("electronic")}
               value={Category}
             >
               <Option value="electronic">electronic</Option>
@@ -221,7 +219,7 @@ export default function AddNewProduct() {
           </CardContent>
         </Card>
       </MUI.Box>
-      <MUI.Box sx={{ mt: "100px" }}>
+      <MUI.Box>
         <Card>
           <ImageList
             sx={{ width: 500, height: 470, pl: "30px", pt: "30px" }}

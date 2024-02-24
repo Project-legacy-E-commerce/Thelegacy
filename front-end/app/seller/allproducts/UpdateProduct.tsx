@@ -19,7 +19,6 @@ import KeyboardArrowDown from "@mui/icons-material/KeyboardArrowDown";
 import Inventory2Icon from "@mui/icons-material/Inventory2";
 import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
 import Slider from "@mui/material-next/Slider";
-import ImageList from "@mui/material/ImageList";
 import ProductContext from "./UseContext";
 
 export default function UpdateProduct() {
@@ -71,7 +70,7 @@ export default function UpdateProduct() {
         quantity: quantity,
         description: description,
       };
-      axios.put(`http://localhost:3000/saler/update/15`, newProduct)
+      axios.put(`http://localhost:3000/saler/update/11`, newProduct)
         .then(() => {
           console.log("data inserted !");
           notifySuccess();

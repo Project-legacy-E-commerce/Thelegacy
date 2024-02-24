@@ -7,7 +7,7 @@ import NavBar from "@/app/seller/UI/NavBar";
 import SideBar from "@/app/seller/UI/SideBar";
 const drawerWidth = 240;
 
-export default function AllProducts() {
+export default function AllClients() {
   const columns: GridColDef[] = [
     { field: "idproduct", headerName: "id", width: 90 },
     {

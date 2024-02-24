@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import * as MUI from "@mui/material";
 import { Inter } from "next/font/google";
-
+import NavBar from "./UI/NavBar";
+import SideBar from "./UI/SideBar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +17,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className} style={{backgroundColor:"#EEEFF8"}}>
+        <NavBar />
+        <SideBar />
+        {children}
+      </body>
     </html>
   );
 }

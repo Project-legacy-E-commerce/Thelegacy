@@ -10,10 +10,7 @@ const drawerWidth = 280;
 
 export default function Seller() {
   return (
-    <MUI.Box sx={{ bgcolor: "#EEEFF8"}}>
-      <NavBar />
-      <MUI.CssBaseline />
-      <SideBar />
+    <MUI.Box >
       <MUI.Box
         sx={{
           ml: `${drawerWidth}px`,

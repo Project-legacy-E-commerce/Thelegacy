@@ -45,7 +45,7 @@ const getProductById = async (id) => {
  try{
   const data =  await Product.findAll({
     where: { idproduct: id },
-    include: [ImgProduct, ColorProduct],
+    include: [ImgProduct, ColorProduct, Reviewrate],
   })
   return data
  }
@@ -121,7 +121,7 @@ const updateColorProduct = (data, productId) => {
 
 // get product to specific saler 
 const getallproductsaler = (id)=>{
-  return Product.findAll({where:{userIduser : id},include:ImgProduct})
+  return Product.findAll({where:{userIduser : id},include:[ImgProduct, Reviewrate]})
 }
 
 // get the 10 new product inserted 
