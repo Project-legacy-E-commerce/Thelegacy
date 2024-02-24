@@ -5,7 +5,7 @@ const username = process.env.USERNAME;
 const pwd = process.env.PWD;
 
 
-const sequelize = new Sequelize("teaa", "azizel", "azerty123456",{
+const sequelize = new Sequelize("teaa", "root", "root",{
 
 
   host: "localhost",
