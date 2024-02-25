@@ -2,8 +2,6 @@
 import * as React from "react";
 import * as Next from "next";
 import * as MUI from "@mui/material";
-import NavBar from "@/app/seller/UI/NavBar";
-import SideBar from "@/app/seller/UI/SideBar";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import Card from "@mui/joy/Card";
@@ -39,7 +37,7 @@ export default function AddNewProduct() {
   const [imgurl, setImgUrl] = React.useState<string[]>([]);
   const [imageMain, setImageMain] = React.useState("");
 
-  const notifySuccess = () => toast.success("Product added successfully!");
+  const notifySuccess = () => toast.success("");
 
   const uploadImage = async (image: any) => {
     const formData = new FormData();
@@ -54,7 +52,7 @@ export default function AddNewProduct() {
     } catch (error) {
       console.error("Error uploading image to Cloudinary:", error);
     }
-  };
+  }
 
   const handleImageChange = async (e: any) => {
     const selectedImages = Array.from(e.target.files);
@@ -67,7 +65,7 @@ export default function AddNewProduct() {
         photo.slice(1).map(uploadImage)
       );
       setImgUrl(additionalImageUrls);
-      notifySuccess();
+      // notifySuccess();
     } catch (err) {
       console.log("Error in insert data from the frontend", err);
     }
@@ -215,6 +213,7 @@ export default function AddNewProduct() {
               <Button variant="solid" color="primary" onClick={insertProduct}>
                 Add Product
               </Button>
+              <ToastContainer style={{zIndex:1, width:20, height:20}}/>
             </CardActions>
           </CardContent>
         </Card>
@@ -234,6 +233,7 @@ export default function AddNewProduct() {
           </ImageList>
         </Card>
       </MUI.Box>
+      
     </MUI.Container>
   );
 }

@@ -12,13 +12,11 @@ import Avatar from "@mui/material/Avatar";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import { red } from "@mui/material/colors";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-import ShareIcon from "@mui/icons-material/Share";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ReviewsIcon from "@mui/icons-material/Reviews";
 import Rating from "@mui/material/Rating";
 import { useState } from "react";
+const drawerWidth = 280;
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -44,13 +42,13 @@ export default function Reviews() {
   };
 
   return (
-    <Container>
-      <Box>
+    <Container sx={{ml:`${drawerWidth}px`}}>
+      <Box sx={{display:"inline-flex", gap:"20px"}}>
         {product?.map((e) => (
-          <Card sx={{ maxWidth: 345 }}>
+          <Card sx={{ width: 300 }}>
             <CardHeader
               avatar={
-                <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                <Avatar sx={{ bgcolor: red[500] }} aria-label="">
                   S
                 </Avatar>
               }
@@ -59,7 +57,7 @@ export default function Reviews() {
             />
             <CardMedia
               component="img"
-              height="194"
+              height="180"
               image={e.imgurlmain}
               alt=""
             />

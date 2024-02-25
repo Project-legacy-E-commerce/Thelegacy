@@ -7,11 +7,13 @@ import IconButton from "@mui/material/IconButton";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
+import { useRouter } from "next/navigation";
 
 const drawerWidth = 240;
 
 export default function NavBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const router = useRouter()
 
   const handleMenu = (event: any) => {
     setAnchorEl(event.currentTarget);
@@ -28,7 +30,7 @@ export default function NavBar() {
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography variant="h4" fontFamily={"serif"}>
-          Seller Dashboard
+          Seller Interface
         </Typography>
         <div>
           <IconButton
@@ -58,7 +60,7 @@ export default function NavBar() {
           >
             <MenuItem onClick={handleClose}>Profile</MenuItem>
             <MenuItem onClick={handleClose}>My account</MenuItem>
-            <MenuItem onClick={handleClose}>Log out</MenuItem>
+            <MenuItem onClick={()=>router.push("/signin")}>Log out</MenuItem>
           </Menu>
         </div>
       </Toolbar>

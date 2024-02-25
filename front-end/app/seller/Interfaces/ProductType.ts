@@ -8,4 +8,10 @@ export default interface Users {
     imgurlmain: string,
     quantity: number,
     description: string,
+    review_rates: [{
+        comment: string,
+        rateofuser: number,
+        userIduser: number,
+        productIdproduct: number
+    }]
 }

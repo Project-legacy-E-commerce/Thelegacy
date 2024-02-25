@@ -1,12 +1,40 @@
+"use client";
 import * as MUI from "@mui/material";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import Inventory2Icon from "@mui/icons-material/Inventory2";
 import StarBorderIcon from "@mui/icons-material/StarBorder";
 import ReviewsIcon from "@mui/icons-material/Reviews";
 import Products from "@/app/seller/Functions/FetchAllProducts";
+import { useEffect, useRef, useState } from "react";
 
 export default function Numbers() {
   const products = Products();
+
+  const handleReview = () => {
+    var review = 0;
+    products.map((e) => {
+      review = review + e.review_rates.length;
+    });
+    return review;
+  };
+
+  const handleTop = () => {
+    var top = 0
+    var best = 0
+    products.map(e=>{
+      e.review_rates?.map(rate=>{
+        if(rate.rateofuser >= 4){
+          return top++
+        }
+      })
+      if(top/e.review_rates.length*5 >= 4){
+        best++
+        top=0
+      }
+    })
+    return best
+  }
+
   return (
     <MUI.Container>
       <MUI.Box
@@ -66,7 +94,7 @@ export default function Numbers() {
         >
           <StarBorderIcon sx={{ fontSize: "60px", color: "yellow" }} />
           <MUI.Typography sx={{ fontSize: "25px", fontFamily: "fantasy" }}>
-            66
+            {handleTop()}
           </MUI.Typography>
           <MUI.Typography sx={{ fontSize: "25px", fontFamily: "monospace" }}>
             Top Products
@@ -83,7 +111,7 @@ export default function Numbers() {
         >
           <ReviewsIcon sx={{ fontSize: "60px", color: "rebeccapurple" }} />
           <MUI.Typography sx={{ fontSize: "25px", fontFamily: "fantasy" }}>
-            200
+            {handleReview()}
           </MUI.Typography>
           <MUI.Typography sx={{ fontSize: "25px", fontFamily: "monospace" }}>
             Reviews

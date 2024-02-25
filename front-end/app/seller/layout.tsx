@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import * as MUI from "@mui/material";
 import { Inter } from "next/font/google";
 import NavBar from "./UI/NavBar";
 import SideBar from "./UI/SideBar";
