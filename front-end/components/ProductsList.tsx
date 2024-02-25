@@ -67,7 +67,7 @@ export default function ProductsList() {
   const fetchData = async () => {
     try {
       const response = await fetch(
-        `http://localhost:3001/panier/getAllcarts/${1}`
+        `http://localhost:3000/panier/getAllcarts/${1}`
       );
       if (!response.ok) {
         throw new Error("Failed to fetch data");
@@ -91,7 +91,7 @@ export default function ProductsList() {
 
   const del = (product: any) => {
     axios
-      .delete(`http://localhost:3001/panier/deletecart/${1}/${product}`)
+      .delete(`http://localhost:3000/panier/deletecart/${1}/${product}`)
       .then((res) => {
         console.log(res);
         setRefresh(!refresh);
