@@ -50,10 +50,12 @@ export default function Navbar() {
             fontWeight: "bold",
           }}
         >
-          <Link href="/">Home</Link>
-          <Link href="/contact">Contact</Link>
-          <Link href="/about">About</Link>
-          <Link href="/signin">Log Out</Link>
+
+          <Link href="/home">Home</Link>
+          <Link href="/ContactUs">Contact</Link>
+          <Link href="/AboutUs">About</Link>
+          <Link href="">Log Out</Link>
+
         </Box>
       </Box>
       <Box
@@ -90,7 +92,7 @@ export default function Navbar() {
             <FontAwesomeIcon icon={faSearch} />
           </IconButton>
         </Box>
-        <IconButton
+        <IconButton //on click to the wishlist 
           sx={{
             color: "black",
             borderRadius: "50%",
@@ -111,7 +113,7 @@ export default function Navbar() {
         >
           <FontAwesomeIcon icon={faShoppingCart} />
         </IconButton>
-        <IconButton
+        <IconButton // onclick to login 
           sx={{
             border: "1px solid #f5f5f5",
             borderRadius: "50%",
