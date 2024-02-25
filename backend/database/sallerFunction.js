@@ -45,7 +45,7 @@ const getProductById = async (id) => {
  try{
   const data =  await Product.findAll({
     where: { idproduct: id },
-    include: [ImgProduct, ColorProduct],
+    include: [ImgProduct, ColorProduct, Reviewrate],
   })
   return data
  }
@@ -56,7 +56,7 @@ const getProductById = async (id) => {
 
 // get product available
 const getAllProductAvailable = () => {
-  return Product.findAll({ where: { status: 'available' } });
+  return Product.findAll({ where: { status: 'available' }, include: [Reviewrate, ImgProduct]  });
 };
 
 // get product by category
@@ -66,7 +66,7 @@ const getProductByCategory = (category) => {
 
 // get product for promotion
 const getProductForPromo = () => {
-  return Product.findAll({ where: { status: "promo" } });
+  return Product.findAll({ where: { status: "promo" }, include: [Reviewrate, ImgProduct] });
 };
 
 // get top-rated product > 4
@@ -121,7 +121,7 @@ const updateColorProduct = (data, productId) => {
 
 // get product to specific saler 
 const getallproductsaler = (id)=>{
-  return Product.findAll({where:{userIduser : id}})
+  return Product.findAll({where:{userIduser : id},include:[ImgProduct, Reviewrate]})
 }
 
 // get the 10 new product inserted 
@@ -129,6 +129,7 @@ const newProductsInStore = () =>{
   return  Product.findAll({
     order: [['createdAt', 'DESC']], // Order by creation time in descending order
     limit: 10, 
+    include:ImgProduct
   });
 } 
 
@@ -139,6 +140,7 @@ const newProductsInStoreuser =(id) =>{
     where: {userIduser : id },
     order: [['createdAt', 'DESC']], // Order by creation time in descending order
     limit: 10, 
+    include:ImgProduct
   });
 } 
 
