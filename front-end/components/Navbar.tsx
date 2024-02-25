@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -11,10 +12,11 @@ import {
   faShoppingCart,
 } from "@fortawesome/free-solid-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 
 export default function Navbar() {
+  const router = useRouter()
   return (
     <Box
       sx={{
@@ -105,6 +107,7 @@ export default function Navbar() {
             width: "32px",
             height: "32px",
           }}
+          onClick={()=>router.push("/cart")}
         >
           <FontAwesomeIcon icon={faShoppingCart} />
         </IconButton>
