@@ -86,34 +86,18 @@ export default function Wishlists() {
   };
 
   return (
-    <div>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <h1>WELCOME TO YOUR WISHLIST</h1>
-        <Button
-          disabled={false}
-          fullWidth={false}
-          variant="solid"
-          size="md"
-          color="primary"
-          aria-label="Explore Bahamas Islands"
-          sx={{
-            alignSelf: "center",
-            fontWeight: 600,
-            backgroundColor: "black",
-            borderRadius: "none",
-          }}
-          onClick={() => handlMoveAll(1)}
-        >
-          MOVE ALL TO CART{" "}
-        </Button>
-      </div>
+    <div style={{ textAlign: "center", marginTop: "20px" }}>
+    <h1  style={{ fontSize: "32px", fontWeight: "bold", color: "#333", textTransform: "uppercase", marginBottom: "20px" }}>WELCOME TO YOUR WISHLIST</h1>
+        
       <Box
         sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
           paddingLeft: "200px",
           paddingRight: "120px",
-          gap: "10px",
-          paddingTop: "100px",
-          width: "100%",
+          paddingTop: "20px",
+          paddingBottom: "20px", // Added padding bottom for space
         }}
       >
         {data.map((product) => (
@@ -207,6 +191,25 @@ export default function Wishlists() {
           </Box>
         ))}
       </Box>
+      <div style={{ display: "flex",justifyContent: "center" }}>
+        <Button
+          disabled={false}
+          fullWidth={false}
+          variant="solid"
+          size="md"
+          color="primary"
+          aria-label="Explore Bahamas Islands"
+          sx={{
+            alignSelf: "center",
+            fontWeight: 600,
+            backgroundColor: "black",
+            borderRadius: "none",
+          }}
+          onClick={() => handlMoveAll(1)}
+        >
+          MOVE ALL TO CART{" "}
+        </Button>
+      </div>
     </div>
   );
 }
