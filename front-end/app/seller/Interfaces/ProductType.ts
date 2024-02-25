@@ -1,4 +1,4 @@
-export default interface Users {
+export default interface Product {
     name: string,
     category: string,
     rate: string,

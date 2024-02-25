@@ -50,10 +50,10 @@ export default function Navbar() {
             fontWeight: "bold",
           }}
         >
-          <Link href="/home">Home</Link>
+          <Link href="/">Home</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/about">About</Link>
-          <Link href="">Log Out</Link>
+          <Link href="/signin">Log Out</Link>
         </Box>
       </Box>
       <Box

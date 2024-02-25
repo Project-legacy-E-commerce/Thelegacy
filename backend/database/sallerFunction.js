@@ -56,7 +56,7 @@ const getProductById = async (id) => {
 
 // get product available
 const getAllProductAvailable = () => {
-  return Product.findAll({ where: { status: 'available' } });
+  return Product.findAll({ where: { status: 'available' }, include: [Reviewrate, ImgProduct]  });
 };
 
 // get product by category
@@ -66,7 +66,7 @@ const getProductByCategory = (category) => {
 
 // get product for promotion
 const getProductForPromo = () => {
-  return Product.findAll({ where: { status: "promo" } });
+  return Product.findAll({ where: { status: "promo" }, include: [Reviewrate, ImgProduct] });
 };
 
 // get top-rated product > 4
