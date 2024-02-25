@@ -1,1 +1,145 @@
 
+body {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  outline: none !important;
+}
+.MuiSelect-select {
+  padding: 0;
+}
+.select-lang {
+  background-color: black;
+  border-color: black;
+  color: white;
+  font-size: 14px;
+}
+
+.links * {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.854);
+}
+.cart-table {
+  box-shadow: none;
+}
+.cart-table * {
+  border: none;
+}
+.qt-input {
+  width: 50px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 7px;
+  outline: none;
+}
+.MuiInputBase-input {
+  padding: 10px !important;
+}
+fieldset {
+  border: none !important;
+}
+.FoutrePosition {
+  margin-left: 120px;
+  margin-top: 40px;
+  gap: 87px;
+}
+.iconWrapper:hover {
+  transform: scale(1.2);
+}
+
+.MuiButton-root:hover {
+  background: rgb(232, 184, 184) !important;
+}
+
+.reviews * {
+  color: white;
+}
+
+.reviews .container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.reviews h2 {
+  color: black !important;
+
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.reviews .description {
+  text-align: center;
+  width: 43%;
+}
+
+.reviews .clientImage {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.clientImage span {
+  margin-left: 10px;
+}
+
+.reviews .clientImage img {
+  width: 40px;
+}
+
+.reviews .reviewSection {
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.reviews .reviewItem {
+  width: 300px;
+  padding: 10px;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  background-color: #5a5ab2;
+  border: 1px solid #5a5ab2;
+  transition: all 0.2s linear;
+}
+
+.reviews .reviewItem:hover {
+  border-color: aqua;
+  transform: scale(1.01);
+  background-color: #5a5ab2;
+  box-shadow: 0 0px 5px 0px #cbc0c0;
+}
+
+.reviews .top {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reviews .top ul {
+  display: flex;
+  list-style: none;
+}
+
+.reviews .top ul li {
+  padding-left: 4px;
+}
+
+.reviews article p {
+  font-size: 15px;
+  font-weight: 100;
+  margin-bottom: 1rem;
+  font-family: system-ui;
+}
