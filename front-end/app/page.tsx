@@ -1,11 +1,27 @@
-import Image from "next/image";
-import styles from "./page.module.css";
-import Cart from "./cart/page";
+"use client";
 
-export default function Home() {
+import Header from "@/components/Header";
+import { Box, Container } from "@mui/system";
+import * as React from "react";
+import Slides from "@/app/homepage/slides";
+import TodaySales from "@/app/homepage/TodaySales";
+import ByCategory from "@/app/homepage/ByCategory";
+import JBL from "@/app/homepage/JBL";
+import AllProducts from "@/app/homepage/AllProducts";
+import NewArrivals from "@/app/homepage/NewArrival";
+import Services from "@/app/homepage/Services";
+
+export default function () {
   return (
-    <main>
-      Home
-    </main>
+    <div>
+      <Header />
+      <Slides />
+      <TodaySales />
+      <ByCategory />
+      <JBL />
+      <AllProducts />
+      <NewArrivals />
+      <Services />
+    </div>
   );
 }
