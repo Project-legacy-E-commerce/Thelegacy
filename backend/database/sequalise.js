@@ -4,7 +4,9 @@ const database = process.env.DATABASE;
 const username = process.env.USERNAME;
 const pwd = process.env.PWD;
 
-const sequelize = new Sequelize("teaa", "root", "Hammaboy10@",{
+
+const sequelize = new Sequelize("teaa", "root", "root",{
+
 
   host: "localhost",
   dialect: "mysql",
@@ -207,6 +209,7 @@ Product.hasMany(ColorProduct)
 Panier.belongsTo(User, { foreignKey: 'userIduser' , onDelete: 'CASCADE' });
 Panier.belongsTo(Product, { foreignKey: 'productIdproduct', onDelete: 'CASCADE' });
 Product.hasMany(ReviewRate,{onDelete: 'CASCADE'})
+User.hasMany(Payment)
 // realtion between saler 
 
 Product.belongsTo(User, { foreignKey: 'userIduser' , onDelete: 'CASCADE' });
