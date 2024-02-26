@@ -4,6 +4,12 @@ const {User} = require ('../database/sequalise')
 const getalluser =()=>{
     return User.findAll()
 }
+const getallSellers =()=>{
+    return User.findAll({where:({role:"Seller"})})
+}
+const getallBuyers =()=>{
+    return User.findAll({where:({role:"Client"})})
+}
 const findUser = (email) => {
     return User.findOne({where:({email: email})})
 }
@@ -25,5 +31,7 @@ module.exports={
     findUser : findUser,
     saveUser : saveUser,
     deleteuser : deleteuser,
-    updateuser : updateuser
+    updateuser : updateuser,
+    getallSellers : getallSellers,
+    getallBuyers:getallBuyers
 }
