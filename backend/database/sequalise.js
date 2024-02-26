@@ -5,7 +5,7 @@ const username = process.env.USERNAME;
 const pwd = process.env.PWD;
 
 
-const sequelize = new Sequelize("teaa", "azizel", "azerty123456",{
+const sequelize = new Sequelize("teaa", "root", "root",{
 
 
   host: "localhost",
@@ -178,27 +178,27 @@ const Wishlist = sequelize.define(
   },
   { freezeTableName: true, timestamps: false }
 );
-const Payment= sequelize.define(
-  "Payment",{
-    id: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-      allowNull: false,
-    },
-    userIduser : {
-      foreignKey : true,
-      allowNull : false,
-      type: DataTypes.INTEGER 
-    },
-    panierIdpanier : {
-      foreignKey : true,
-      allowNull : false,
-      type: DataTypes.INTEGER 
-    }
-  },
-  { freezeTableName: true, timestamps: false }
-)
+// const Payment= sequelize.define(
+//   "Payment",{
+//     id: {
+//       type: DataTypes.INTEGER,
+//       autoIncrement: true,
+//       primaryKey: true,
+//       allowNull: false,
+//     },
+//     userIduser : {
+//       foreignKey : true,
+//       allowNull : false,
+//       type: DataTypes.INTEGER 
+//     },
+//     panierIdpanier : {
+//       foreignKey : true,
+//       allowNull : false,
+//       type: DataTypes.INTEGER 
+//     }
+//   },
+//   { freezeTableName: true, timestamps: false }
+// )
 
 
 // Associations
@@ -209,6 +209,7 @@ Product.hasMany(ColorProduct)
 Panier.belongsTo(User, { foreignKey: 'userIduser' , onDelete: 'CASCADE' });
 Panier.belongsTo(Product, { foreignKey: 'productIdproduct', onDelete: 'CASCADE' });
 Product.hasMany(ReviewRate,{onDelete: 'CASCADE'})
+User.hasMany(Payment)
 // realtion between saler 
 
 Product.belongsTo(User, { foreignKey: 'userIduser' , onDelete: 'CASCADE' });
@@ -231,7 +232,7 @@ module.exports = {
   ImgProduct :ImgProduct,
   ColorProduct :ColorProduct,
   User :User,
-  Payment:Payment
+  // Payment:Payment
 }
 
 

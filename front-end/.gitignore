@@ -6,8 +6,8 @@
 .pnp.js
 .yarn/install-state.gz
 /package-lock.json
-./backend/package-lock.json
-./backend/node_modules
+/backend/package-lock.json
+/backend/node_modules
 
 # testing
 /coverage

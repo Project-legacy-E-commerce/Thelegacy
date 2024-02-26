@@ -9,6 +9,7 @@ const RouterPanier = require("./router/routerPanier");
 const Routerwishlist = require("./router/routewishlist");
 const RouterRate=require("./router/routerRate")
 const RouterPayment=require("./router/routerPayment")
+const RouterDetails = require("./router/routerDetails");
 const app = express();
 app.use(express.json());
 app.use(cors());

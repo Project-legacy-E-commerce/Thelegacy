@@ -15,6 +15,8 @@ const { Panier,Product,ColorProduct,ImgProduct } = require("../database/sequalis
       throw err;
     }
   };
+
+
   
   
   //to delete one product from panier

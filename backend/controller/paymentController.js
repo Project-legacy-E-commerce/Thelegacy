@@ -6,4 +6,8 @@ module.exports={paycart: async (req, res) => {
 await payment.createPayment({userIduser:userIduser, cartIdcart:cartIdcart})
       .then(() => res.status(200).send("cart payed"))
       .catch((error) => res.status(500).json(error));
-  }}
+  },
+  getPay: async (req, res) => {
+    
+  }
+}
