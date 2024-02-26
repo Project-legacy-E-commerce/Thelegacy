@@ -5,7 +5,7 @@ module.exports={
         const obj = {
           name: req.body.name,
           category: req.body.category,
-          rate: req.body.rate,
+        //   rate: req.body.rate,
           status: req.body.status,
           initalprice: req.body.initalprice,
           currentprice: req.body.currentprice,
@@ -78,7 +78,8 @@ module.exports={
     },
     GetallProductAvailable : async (req,res)=>{
         try{
-            const results = await prod.getAllProductAvailable()
+            const results = await prod
+              .getAllProductAvailable()
             res.status(200).json(results)
         }
         catch(err){

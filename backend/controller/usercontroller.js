@@ -16,6 +16,26 @@ module.exports = {
       res.status(500).json(err); 
     }
   },
+  GetAllSellers: async (req, res) => {
+    try {
+      const result = await user.getallSellers();
+      console.log(result)
+      res.status(200).json(result);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err); 
+    }
+  },
+  GetAllBuyers: async (req, res) => {
+    try {
+      const result = await user.getallBuyers();
+      console.log(result)
+      res.status(200).json(result);
+    } catch (err) {
+      console.log(err);
+      res.status(500).json(err); 
+    }
+  },
 
   DeleteUser:async (req,res)=>{
     const id = req.params.iduser
