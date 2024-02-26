@@ -42,9 +42,9 @@
     "npm": "^10.4.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-router-dom": "^6.22.1"
+    "react-router-dom": "^6.22.1",
     "styled-components": "^6.1.8",
-    "universal-cookie": "^7.1.0"
+    "universal-cookie": "^7.1.0",
     "react-bootstrap": "^2.10.1",
     "react-toastify": "^10.0.4"
   },

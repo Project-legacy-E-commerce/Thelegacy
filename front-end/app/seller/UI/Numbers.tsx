@@ -60,7 +60,7 @@ export default function Numbers() {
         >
           <PeopleAltIcon sx={{ fontSize: "60px" }} />
           <MUI.Typography sx={{ fontSize: "25px", fontFamily: "fantasy" }}>
-            85
+            20
           </MUI.Typography>
           <MUI.Typography sx={{ fontSize: "25px", fontFamily: "monospace" }}>
             Clients
