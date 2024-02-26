@@ -66,10 +66,7 @@ const getProductById = async (id) => {
     ],
   });
   return data;
-    include: [ImgProduct, ColorProduct, Reviewrate],
-  })
-  return data
- }
+ } 
  catch(err){
   console.log('err',err);
  }

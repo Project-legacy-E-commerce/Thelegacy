@@ -1,4 +1,5 @@
 export default interface Product {
+    idproduct: number,
     name: string,
     category: string,
     rate: string,

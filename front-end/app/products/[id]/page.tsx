@@ -54,7 +54,7 @@ const Page = ({ params }: any) => {
   const fetchAllProducts = async (productCat: string, id: number) => {
     try {
       const response = await fetch(
-        `http://localhost:3001/saler/productcategory/${productCat}`
+        `http://localhost:3000/saler/productcategory/${productCat}`
       ); // Assuming you have an API endpoint to fetch product details
       const data = await response.json();
       console.log("all products", data);
@@ -69,7 +69,7 @@ const Page = ({ params }: any) => {
   const fetchProductDetails = async (productId: any) => {
     try {
       const response = await fetch(
-        `http://localhost:3001/saler/getproduct/${productId}`
+        `http://localhost:3000/saler/getproduct/${productId}`
       ); // Assuming you have an API endpoint to fetch product details
       const data = await response.json();
       console.log(data);

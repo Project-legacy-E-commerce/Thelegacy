@@ -30,9 +30,9 @@ export default function TodaySales() {
   const scrollAmount = 100;
   const router = useRouter();
 
-  const hundleLike = (data: any) => {
+  const hundleLike = (id: any) => {
     axios
-      .post(`http://localhost:3000/wishlist/add/:id/:iduser`, data)
+      .post(`http://localhost:3000/wishlist/add/${id}/1`)
       .then((result) => {
         console.log(result);
       })
@@ -144,10 +144,7 @@ export default function TodaySales() {
                       zIndex: 1,
                     }}
                     onClick={() =>
-                      hundleLike({
-                        product: e,
-                        userIduser: localStorage.getItem("id"),
-                      })
+                      hundleLike(e.idproduct)
                     }
                   >
                     <FavoriteBorderIcon />
@@ -182,7 +179,7 @@ export default function TodaySales() {
                 <CardContent>
                   <Typography level="body-xs">{e.category}</Typography>
                   <Link
-                    href="#product-card"
+                    href={`/products/${e.idproduct}`}
                     fontWeight="md"
                     color="neutral"
                     textColor="text.primary"
